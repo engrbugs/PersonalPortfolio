@@ -15,50 +15,70 @@
         }
 
         body {
-            background-color: #EDFBFF;
+            background-color: #F1F1E6;
             font-family: 'Nunito', sans-serif;
             font-weight: 400;
             margin: 0;
         }
 
         nav {
-            background-color: violet;
+            background-color: #222f3e;
             color: whitesmoke;
-            padding: 20px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 100;
-
+            z-index: 10;
+            
         }
-
+        nav a,
+nav a:after,
+nav a:before {
+  transition: all .5s;
+}
         nav a {
-            color: yellow;
-            margin-left: 30px;
+            color: whitesmoke;
+            margin-left: 48px;
             text-decoration: none;
             position: relative;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 25px;
+            z-index: 1;
+            display: block;
+            padding: 15px;
         }
 
+nav a:hover {
+    color: teal;
+}
+
         nav a::after{
-            content: '';
-            border-bottom: 3px solid white;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform: translateY(10px);
-            transition: transform 0.3s ease;
-            opacity: 0;
-            height: 100%;
-            width: 100%;
+            display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: #2e86de;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+  transition: transform 0.3s ease;
         }
 
 
         nav a:hover::after {
+            transition: transform 0.3s ease;
             opacity: 1;
-            transform: translateY(0);
+  visibility: visible;
+  height: 100%;
         }
 
         header {
@@ -125,10 +145,14 @@
         }
         
         .project-tile {
+            max-height: 300px;
             margin: 10px;
             max-width: 250px;
             text-decoration: none;
             transition: transform 0.3s ease;
+
+            display: block;
+
         }
 
         .project-tile:hover {
@@ -136,7 +160,10 @@
         }
 
         .project-tile img {
-            max-width: 100%;
+            height: 250px;
+  width: 100%;
+  object-fit: scale-down;
+  border: 3px solid white;
         }
 
         .project-tile p {
@@ -147,7 +174,7 @@
 
 
         .bg-black {
-            background-color: teal;
+            background-color: #222F3E;
             color: whitesmoke;
         }
 
@@ -172,6 +199,10 @@
             height: 50px;
             width: 50px;
             text-decoration: none;
+            width: 50px;
+
+   
+ 
         }
 
         footer {
@@ -195,15 +226,20 @@
 </head>
 <body>
     <nav id="navbar">
-        <a href="#welcome-section">About</a>
-        <a href="#projects">Works</a>
-        <a href="#me">Me</a>
+        <a href="#welcome-section">
+            <i class="fas fa-user"></i>
+        </a>
+        <a href="#projects">
+            <i class="fas fa-pen"></i>
+        </a>
+        <a href="#me">
+            <i class="fas fa-link"></i>
+        </a>
     </nav>
     <header id="welcome-section">
         <h1>
-            Hello!
+            Herby Sio
         </h1>
-        <p>My name is Herby Sio</p>        
         <p>Software Engineer</p>
 
     </header>
@@ -218,7 +254,6 @@
 
             <a href="" class="project-tile">
                 <img src="https://i.imgur.com/zEZTUJk.gif" alt="Computing for the Answer">
-                <img src="https://i.imgur.com/QhpVnUW.gif" alt="Computing for the Answer">
                 <p>Einstien Riddle Solver</p>
             </a>
 
@@ -249,15 +284,23 @@
         <h2>Social Media</h2>
         <p>You can find me on...</p>
         <ul class="me-links">
-            <li><a id="profile-link" href="https://github.com/engrbugs" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li>
+                <a id="profile-link" href="https://github.com/engrbugs" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            <li>
+                <a id="profile-link" href="https://github.com/engrbugs" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+            <li>
+                <a id="profile-link" href="https://github.com/engrbugs" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
         </ul>
     </section>
-
-    <footer>Made with <i class="fas fa-heart"></i>by Herby Sio</footer>
 
 
 
