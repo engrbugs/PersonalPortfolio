@@ -158,7 +158,6 @@
             text-decoration: none;
             transition: transform 0.3s ease;
             display: block;
-            
         }
 
         .project-tile:hover {
@@ -169,7 +168,9 @@
             height: 250px;
             width: 100%;
             object-fit: scale-down;
-            border: 3px solid #8395a7;
+            border: 3px solid #2e86de;
+            border-radius: 10px;
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
         }
 
         .project-tile p {
@@ -213,12 +214,26 @@
             width: 50px;
         }
 
-        @media (max-width: 440px) {
-            section {
-                padding: 20px;
+        @media (max-width: 888px) {
+            section h2 {
+                left: calc(50vw - 320px);
             }
         }
 
+        @media (max-width: 618px) {
+
+            section h2 {
+                text-align: center;
+                margin: 0px auto 24px;
+                position: unset;
+            }
+
+            section {
+                justify-content: center;
+                text-align: center;
+                margin: 0px auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -245,32 +260,32 @@
         <h2>Projects:</h2>
         <div class="project-container">
 
-            <a href="" class="project-tile">
+            <a href="https://github.com/engrbugs/Handwritten.Recognition" target="_blank" class="project-tile">
                 <img src="https://camo.githubusercontent.com/cfb006662e268bcffccfb27904391a4b2a0c6007/68747470733a2f2f692e696d6775722e636f6d2f70384332704c4e2e706e67" style="object-fit: cover" alt="Read Number 5">
                 <p>Handwritten Recognition</p>
             </a>
 
-            <a href="" class="project-tile">
+            <a href="https://github.com/engrbugs/Einstein.Riddle" target="_blank" class="project-tile">
                 <img src="https://i.imgur.com/dfZoHwK.gif" style="object-fit: fill" alt="Einstien Riddle">
                 <p>Einstien Riddle Solver</p>
             </a>
 
-            <a href=""  class="project-tile">
+            <a href="https://engrbugs.github.io/TributePage/"  target="_blank" class="project-tile">
                 <img src="https://i.imgur.com/sOzCJ4n.jpg" style="object-fit: cover; object-position: -24px 0" alt="Marcus Aurelius">
                 <p>Tribute Page</p>
             </a>
           
-            <a href="" class="project-tile">
+            <a href="https://engrbugs.github.io/SurveyForm/" target="_blank" class="project-tile">
                 <img src="https://i.imgur.com/t8p3Xxn.gif" style="object-fit: fill" alt="FCC Survey Form">
                 <p>Survey Form</p>
             </a>
 
-            <a href="" class="project-tile">
+            <a href="https://engrbugs.github.io/LandingPage/" target="_blank" class="project-tile">
                 <img src="https://i.imgur.com/0WrhHDe.png" alt="Gacha Life">
                 <p>Landing Page</p>
             </a>
 
-            <a href="" class="project-tile">
+            <a href="https://engrbugs.github.io/TechnicalDocumentation/" target="_blank" class="project-tile">
                 <img src="https://images-na.ssl-images-amazon.com/images/I/4145Q3WAneL._SX331_BO1,204,203,200_.jpg" alt="Art of War">
                 <p>Art of War by Sun Tzu</p>
             </a> 
