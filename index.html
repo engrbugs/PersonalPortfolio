@@ -16,7 +16,7 @@
 
         body {
             background-color: #F1F1E6;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Monserrat', sans-serif;
             font-weight: 400;
             margin: 0;
         }
@@ -31,58 +31,59 @@
             left: 0;
             right: 0;
             z-index: 10;
-            
         }
+
         nav a,
-nav a:after,
-nav a:before {
-  transition: all .5s;
-}
+        nav a:after,
+        nav a:before {
+            transition: all .5s;
+        }
+        
         nav a {
             color: whitesmoke;
             margin-left: 48px;
             text-decoration: none;
             position: relative;
-            font-family: 'Montserrat', sans-serif;
             font-size: 25px;
             z-index: 1;
             display: block;
             padding: 15px;
         }
 
-nav a:hover {
-    color: teal;
-}
+        nav a:hover {
+            color: teal;
+        }
 
         nav a::after{
             display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  width: 100%;
-  height: 1px;
-  content: '.';
-  color: transparent;
-  background: #2e86de;
-  visibility: none;
-  opacity: 0;
-  z-index: -1;
-  transition: transform 0.3s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            width: 100%;
+            height: 1px;
+            content: '.';
+            color: transparent;
+            background: #54a0ff;
+            visibility: none;
+            opacity: 0;
+            z-index: -1;
+            transition: transform 0.3s ease;
         }
 
 
         nav a:hover::after {
             transition: transform 0.3s ease;
             opacity: 1;
-  visibility: visible;
-  height: 100%;
+            visibility: visible;
+            height: 100%;
         }
 
         header {
-            background-image: url(https://i.pinimg.com/564x/35/f4/e8/35f4e873a1693e96121a301dd247a51c.jpg);
+            font-family: 'Nunito', sans-serif;
+            background-image: url(https://i.imgur.com/XlfKE4V.jpg);
             background-size: cover;
             background-position: center center;
             height: 100vh;
@@ -123,12 +124,18 @@ nav a:hover {
         
         section {
             padding: 30px;
-            text-align: center;
+            text-align: left;
         }
 
         section h2 {
-            margin-top: 0;
+            margin: 0;
+            color: #222f3e;
+            font-size: 28px;
+            left: calc(50vw - 450px);
+            position: relative;
+            padding-bottom: 0;
             margin-bottom: 0;
+            width: fit-content;
         }
 
         section p {
@@ -141,7 +148,7 @@ nav a:hover {
             align-items: center;
             justify-content: center;
             max-width: 810px;
-            margin: 20px auto 0;
+            margin: 8px auto 0;
         }
         
         .project-tile {
@@ -150,9 +157,8 @@ nav a:hover {
             max-width: 250px;
             text-decoration: none;
             transition: transform 0.3s ease;
-
             display: block;
-
+            
         }
 
         .project-tile:hover {
@@ -161,21 +167,26 @@ nav a:hover {
 
         .project-tile img {
             height: 250px;
-  width: 100%;
-  object-fit: scale-down;
-  border: 3px solid white;
+            width: 100%;
+            object-fit: scale-down;
+            border: 3px solid #8395a7;
         }
 
         .project-tile p {
+            text-align: center;
             color: black;
-            font-size: 30px;
+            font-size: 18px;
             margin-top: 10px;
         }
 
 
         .bg-black {
+            padding-top: 24px;
+            margin-top: 0;
             background-color: #222F3E;
             color: whitesmoke;
+            justify-content: center;
+            text-align: center;
         }
 
         .me-links {
@@ -189,31 +200,17 @@ nav a:hover {
 
         .me-links a {
             border-radius: 50%;
-            border: 3px solid white;
+            border: 3px solid whitesmoke;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: whitesmoke;
             font-size: 20px;
             margin: 5px 10px;
             height: 50px;
             width: 50px;
             text-decoration: none;
             width: 50px;
-
-   
- 
-        }
-
-        footer {
-            background-color: blue;
-            color: whitesmoke;
-            padding: 10px;
-            text-align: center;
-        }
-
-        footer .fa-heart {
-            color: red;
         }
 
         @media (max-width: 440px) {
@@ -225,14 +222,15 @@ nav a:hover {
     </style>
 </head>
 <body>
-    <nav id="navbar">
+    <nav id="navbar" title="Me">
         <a href="#welcome-section">
             <i class="fas fa-user"></i>
+            
         </a>
-        <a href="#projects">
+        <a href="#projects" title="Works">
             <i class="fas fa-pen"></i>
         </a>
-        <a href="#me">
+        <a href="#me" title="Connect!">
             <i class="fas fa-link"></i>
         </a>
     </nav>
@@ -244,36 +242,36 @@ nav a:hover {
 
     </header>
     <section id="projects">
-        <h2>Projects....</h2>
+        <h2>Projects:</h2>
         <div class="project-container">
 
             <a href="" class="project-tile">
-                <img src="https://camo.githubusercontent.com/cfb006662e268bcffccfb27904391a4b2a0c6007/68747470733a2f2f692e696d6775722e636f6d2f70384332704c4e2e706e67" alt="Read Number 5">
+                <img src="https://camo.githubusercontent.com/cfb006662e268bcffccfb27904391a4b2a0c6007/68747470733a2f2f692e696d6775722e636f6d2f70384332704c4e2e706e67" style="object-fit: cover" alt="Read Number 5">
                 <p>Handwritten Recognition</p>
             </a>
 
             <a href="" class="project-tile">
-                <img src="https://i.imgur.com/zEZTUJk.gif" alt="Computing for the Answer">
+                <img src="https://i.imgur.com/dfZoHwK.gif" style="object-fit: fill" alt="Einstien Riddle">
                 <p>Einstien Riddle Solver</p>
             </a>
 
-            <a href="" class="project-tile">
-                <img src="https://i.imgur.com/sOzCJ4n.jpg" alt="Read Number 5">
+            <a href=""  class="project-tile">
+                <img src="https://i.imgur.com/sOzCJ4n.jpg" style="object-fit: cover; object-position: -24px 0" alt="Marcus Aurelius">
                 <p>Tribute Page</p>
             </a>
-
+          
             <a href="" class="project-tile">
-                <img src="https://i.imgur.com/t8p3Xxn.gif" alt="Computing for the Answer">
+                <img src="https://i.imgur.com/t8p3Xxn.gif" style="object-fit: fill" alt="FCC Survey Form">
                 <p>Survey Form</p>
             </a>
 
             <a href="" class="project-tile">
-                <img src="https://i.imgur.com/0WrhHDe.png" alt="Read Number 5">
+                <img src="https://i.imgur.com/0WrhHDe.png" alt="Gacha Life">
                 <p>Landing Page</p>
             </a>
 
             <a href="" class="project-tile">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bamboo_book_-_closed_-_UCR.jpg/330px-Bamboo_book_-_closed_-_UCR.jpg" alt="Computing for the Answer">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/4145Q3WAneL._SX331_BO1,204,203,200_.jpg" alt="Art of War">
                 <p>Art of War by Sun Tzu</p>
             </a> 
 
@@ -281,8 +279,7 @@ nav a:hover {
         
     </section>
     <section id="me" class="bg-black">
-        <h2>Social Media</h2>
-        <p>You can find me on...</p>
+        <h3>For more works visit</h3>
         <ul class="me-links">
             <li>
                 <a id="profile-link" href="https://github.com/engrbugs" target="_blank">
