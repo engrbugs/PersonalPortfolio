@@ -19,6 +19,9 @@
             font-family: 'Monserrat', sans-serif;
             font-weight: 400;
             margin: 0;
+            background: url("https://i.imgur.com/4MuY3MR.png") no-repeat fixed;
+            background-size: cover;
+            place-items: center;
         }
 
         nav {
@@ -73,7 +76,6 @@
             transition: transform 0.3s ease;
         }
 
-
         nav a:hover::after {
             transition: transform 0.3s ease;
             opacity: 1;
@@ -85,19 +87,17 @@
             font-family: 'Nunito', sans-serif;
             background-color: #330033;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
-            /* background-image: url(https://i.imgur.com/XlfKE4V.jpg); */
             background-size: auto;
             background-position: center center;
             height: 100vh;
             position:relative;
-            /* color: white; */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
 
-        header::after{
+        header::after {
             content: '';
             background-color: #000;
             position: absolute;
@@ -145,46 +145,119 @@
 
         section p {
             margin-top: 0;
-            
         }
 
         .project-container {
+            padding-top: 40px;
+            padding-bottom: 40px;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
             max-width: 810px;
             margin: 8px auto 0;
+            --br: 14px;
+            border-radius: var(--br);
+            display: grid;
+            grid-template-columns: 220px 220px 220px;
+            gap: 35px;
+            position: relative;
+            background: inherit;
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            color: #fff;
         }
-        
+
+        .project-container::before {
+            --offset: 50px;
+            content: "";
+            position: absolute;
+            top: calc(-1 * var(--offset));
+            left: calc(-1 * var(--offset));
+            right: calc(-1 * var(--offset));
+            bottom: calc(-1 * var(--offset));
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+            filter: blur(var(--offset));
+            background: inherit;
+            border-radius: var(--br);
+        }
+
         .project-tile {
+            background-color: whitesmoke;
             max-height: 300px;
             margin: 10px;
-            max-width: 250px;
+            max-width: 220px;
             text-decoration: none;
             transition: transform 0.3s ease;
-            display: block;
+            display: grid;
+            gap: 35px;
+            margin-top: 30px;
+            overflow: hidden;
+            border-radius: var(--br);
+            overflow: hidden;
+            position: relative;
         }
 
         .project-tile:hover {
             transform: scale(1.05);
         }
 
-        .project-tile img {
-            border-radius: 30px;
+        .project-tile, .bg {
+            height: 100%;
+            width: 100%;
+            background-color: whitesmoke;
+            background: var(--img) var(--bpx) no-repeat;
+            background-position-y: var(--bpy);
+            background-size: cover;
+            overflow: hidden;
+            border-radius: var(--br);
             filter: drop-shadow(0 30px 20px rgba(0, 0, 0, 0.2));
             height: 250px;
-            width: 100%;
             object-fit: scale-down;
-            border: 3px solid #005A9D;
         }
 
-        .project-tile p {
+        .project-tile div.details {
+            position: absolute;
+            overflow: hidden;
+            transform: translateY(70%);
+            width: 100%;
+            height: 100%;
             text-align: center;
-            /* color: black; */
-            font-size: 18px;
+        }
+
+        .project-tile div.details::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: var(--img);
+            background-size: cover;
+            background-position-x: var(--bpx);
+            background-position-y: var(--bpy);
+            transform: translateY(-70%);
+            filter: blur(20px);
+            bottom: -20px;
+            left: 0;
+            right: 0;
+        }
+       
+        .project-tile div.details-inner {
+            position: absolute;
+            height: 30%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+   
+        .project-tile div.title {
+            text-align: center;
+            font-size: 16px;
             margin-top: 10px;
-            color: #005A9D;
+            color: white;
+            font-weight: 300;
         }
 
 
@@ -207,7 +280,7 @@
         }
 
         .me-links a {
-            border-radius: 50%;
+            border-radius: var(--br);
             border: 3px solid whitesmoke;
             display: inline-flex;
             align-items: center;
@@ -225,6 +298,10 @@
             section h2 {
                 left: calc(50vw - 320px);
             }
+
+            .project-container {
+            grid-template-columns: 220px 220px;
+            }
         }
 
         @media (max-width: 618px) {
@@ -234,6 +311,10 @@
                 margin: 0px auto 24px;
                 position: unset;
                 
+            }
+
+            .project-container {
+                grid-template-columns: 220px;
             }
 
             section {
@@ -248,7 +329,6 @@
     <nav id="navbar" title="Me">
         <a href="#welcome-section">
             <i class="fas fa-user"></i>
-            
         </a>
         <a href="#projects" title="Works">
             <i class="fas fa-pen"></i>
@@ -261,45 +341,78 @@
         <h1>
             Herby Sio
         </h1>
-        <p>Software Engineer</p>
-
+        <p>engineer</p>
     </header>
     <section id="projects">
         <h2>Projects:</h2>
         <div class="project-container">
-
-            <a href="https://github.com/engrbugs/Handwritten.Recognition" target="_blank" class="project-tile">
-                <img src="https://camo.githubusercontent.com/cfb006662e268bcffccfb27904391a4b2a0c6007/68747470733a2f2f692e696d6775722e636f6d2f70384332704c4e2e706e67" style="object-fit: cover" alt="Read Number 5">
-                <p>Handwritten Recognition</p>
+            <a href="https://github.com/engrbugs/Handwritten.Recognition" target="_blank" class="project-tile"
+            style="--img: url(https://camo.githubusercontent.com/cfb006662e268bcffccfb27904391a4b2a0c6007/68747470733a2f2f692e696d6775722e636f6d2f70384332704c4e2e706e67);">
+                <div class="bg" style="--bpx: -48px;">
+                    <div class="details">
+                        <div class="details-inner">
+                            <div class="title">Handwritten Recognition</div>
+                        </div>
+                    </div>
+                </div>
             </a>
 
-            <a href="https://github.com/engrbugs/Einstein.Riddle" target="_blank" class="project-tile">
-                <img src="https://i.imgur.com/dfZoHwK.gif" style="object-fit: fill" alt="Einstien Riddle">
-                <p>Einstien Riddle Solver</p>
+            <a href="https://github.com/engrbugs/Einstein.Riddle" target="_blank" class="project-tile"
+            style="--img: url(https://i.imgur.com/dfZoHwK.gif);">
+                <div class="bg" style="--bpx: -39px;">
+                    <div class="details">
+                        <div class="details-inner">
+                            <div class="title">Einstien Riddle Solver</div>
+                        </div>
+                    </div>
+                </div>
             </a>
 
-            <a href="https://engrbugs.github.io/TributePage/"  target="_blank" class="project-tile">
-                <img src="https://i.imgur.com/sOzCJ4n.jpg" style="object-fit: cover; object-position: -24px 0" alt="Marcus Aurelius">
-                <p>Tribute Page</p>
-            </a>
-          
-            <a href="https://engrbugs.github.io/SurveyForm/" target="_blank" class="project-tile">
-                <img src="https://i.imgur.com/t8p3Xxn.gif" style="object-fit: fill" alt="FCC Survey Form">
-                <p>Survey Form</p>
-            </a>
-
-            <a href="https://engrbugs.github.io/LandingPage/" target="_blank" class="project-tile">
-                <img src="https://i.imgur.com/0WrhHDe.png" alt="Gacha Life">
-                <p>Landing Page</p>
+            <a href="https://engrbugs.github.io/TributePage/" target="_blank" class="project-tile"
+            style="--img: url(https://i.imgur.com/sOzCJ4n.jpg);">
+                <div class="bg" style="--bpx: -39px;">
+                    <div class="details">
+                        <div class="details-inner">
+                            <div class="title">Tribute Page</div>
+                        </div>
+                    </div>
+                </div>
             </a>
 
-            <a href="https://engrbugs.github.io/TechnicalDocumentation/" target="_blank" class="project-tile">
-                <img src="https://images-na.ssl-images-amazon.com/images/I/4145Q3WAneL._SX331_BO1,204,203,200_.jpg" alt="Art of War">
-                <p>Art of War by Sun Tzu</p>
-            </a> 
+            <a href="https://engrbugs.github.io/SurveyForm/" target="_blank" class="project-tile"
+            style="--img: url(https://i.imgur.com/t8p3Xxn.gif);">
+                <div class="bg" style="--bpx: 0px;">
+                    <div class="details">
+                        <div class="details-inner">
+                            <div class="title">Survey Form</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://engrbugs.github.io/LandingPage/" target="_blank" class="project-tile"
+            style="--img: url(https://i.imgur.com/0WrhHDe.png);">
+                <div class="bg" style="--bpx: -68px;">
+                    <div class="details">
+                        <div class="details-inner">
+                            <div class="title">Landing Page</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://engrbugs.github.io/TechnicalDocumentation/" target="_blank" class="project-tile"
+                style="--img: url(https://images-na.ssl-images-amazon.com/images/I/4145Q3WAneL._SX331_BO1,204,203,200_.jpg);">
+                <div class="bg" style="--bpx: 0px; --bpy: -10px">
+                    <div class="details">
+                        <div class="details-inner">
+                            <div class="title">Art of War by Sun Tzu</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
 
         </div>
-        
     </section>
     <section id="me" class="bg-black">
         <h3>For more works visit</h3>
